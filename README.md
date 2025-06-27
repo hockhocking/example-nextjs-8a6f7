@@ -73,7 +73,7 @@ server](https://arcjet.com/discord).
 - UI: [shadcn/ui](https://ui.shadcn.com/)
 - Form handling: [React Hook Form](https://react-hook-form.com/) (see also [our
   full form protection
-  example](https://github.com/arcjet/arcjet-js/tree/main/examples/nextjs-14-react-hook-form))
+  example](https://github.com/arcjet/example-nextjs-form))
 - Client-side validation: [Zod](https://zod.dev/)
 - Security: [Arcjet](https://arcjet.com/)
 
