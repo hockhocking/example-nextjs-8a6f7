@@ -1,12 +1,13 @@
 import { signIn } from "@/lib/auth";
-import { buttonVariants } from "@/components/ui/button";
 
 export function SignIn() {
-  let needToConfigureGitHub: boolean;
   if (process.env.AUTH_GITHUB_ID === undefined) {
-    needToConfigureGitHub = true;
-  } else {
-    needToConfigureGitHub = false;
+    return (
+      <p>
+        Configure your GitHub OAuth app credentials in <code>.env</code> to
+        enable sign in.
+      </p>
+    );
   }
 
   return (
@@ -15,15 +16,11 @@ export function SignIn() {
         "use server";
         await signIn("github");
       }}
+      className="form"
     >
-      <button
-        type="submit"
-        disabled={needToConfigureGitHub}
-        className={buttonVariants({ variant: "outline" })}
-      >
-        {needToConfigureGitHub
-          ? "Configure your GitHub OAuth app credentials in .env to sign in"
-          : "Sign in with GitHub to see a different rate limit"}
+      <p>Want to try a different rate limit?</p>
+      <button type="submit" className="button-secondary">
+        Sign in with GitHub
       </button>
     </form>
   );
